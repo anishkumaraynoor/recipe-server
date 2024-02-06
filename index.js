@@ -23,7 +23,6 @@ expressServer.listen(PORT, ()=>{
 })
 
 expressServer.get('/',(req,res)=>{
-    console.log("hello hai");
     res.send("request received")
 })
 
