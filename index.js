@@ -14,6 +14,7 @@ require('./db/connection')
 const expressServer = express()
 expressServer.use(cors())
 expressServer.use(express.json())
+expressServer.use('/uploads', express.static('./uploads'))
 expressServer.use(router)
 
 
