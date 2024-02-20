@@ -19,12 +19,16 @@ router.post('/add-recipe',jwtMiddleware,multerConfig.single('recipeimage'), reci
 
 
 router.get('/get-all-recipes', jwtMiddleware, recipeController.getAllRecipes)
-router.get('/get-user-projects',jwtMiddleware, projectController.getUserProjects)
+router.get('/get-user-recipes',jwtMiddleware, recipeController.getUserRecipes)
+
+router.delete('/remove-recipe/:pid',jwtMiddleware,recipeController.removeRecipe)
+
+
+
+
 //update project
-router.put('/project/edit/:pid',jwtMiddleware, multerConfig.single('projectImage'), projectController.editProject)
-//remove project
-router.delete('/remove-project/:pid',jwtMiddleware,projectController.removeProject)
-//update user
-router.put('/user/edit',jwtMiddleware, multerConfig.single('profileImage'), userController.editUser)
+router.put('/recipe/edit/:pid',jwtMiddleware, multerConfig.single('recipeimage'), recipeController.editRecipe)
+
+
 
 module.exports = router
